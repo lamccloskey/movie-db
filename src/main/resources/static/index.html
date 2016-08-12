@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="app" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="app" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <base href="/">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <title data-ng-bind="title"></title>
+
+    <!-- vendor css -->
+    <link rel="stylesheet" type='text/css' href="app/bower_components/bootstrap/dist/css/bootstrap.css">
+
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+    <div ui-view="navbar"></div>
+    <div ui-view="main"></div>
+
+
+    <!-- vendor js -->
+    <script type="text/javascript" src="app/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="app/bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="app/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="app/bower_components/ng-notifications-bar/dist/ngNotificationsBar.min.js"></script>
+    <script type="text/javascript" src="app/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+
+
+    <!-- bootstrapping -->
+    <script type="text/javascript" src="app/app.module.js"></script>
+
+    <!-- core module -->
+    <script type="text/javascript" src="app/core/core.module.js"></script>
+    <script type="text/javascript" src="app/core/core.config.js"></script>
+    <script type="text/javascript" src="app/core/navbar/navbar.controller.js"></script>
+
+    <!-- home module -->
+    <script type="text/javascript" src="app/home/home.module.js"></script>
+    <script type="text/javascript" src="app/home/home.config.js"></script>
+    <script type="text/javascript" src="app/home/home.controller.js"></script>
+
+</body>
+
+</html>

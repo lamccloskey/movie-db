@@ -8,6 +8,6 @@ import org.springframework.context.ApplicationContext;
 public class MoviedbApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext ctx = SpringApplication.run(MoviedbApplication.class, args);
+		SpringApplication.run(MoviedbApplication.class, args);
 	}
 }
