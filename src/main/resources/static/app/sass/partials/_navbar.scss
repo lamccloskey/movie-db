@@ -1,9 +1,21 @@
 @import "bourbon/bourbon";
 
-.navbar{
-    margin-bottom: 0px;
+
+.navbar {
+    padding: .75em;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #000;
 
     #brand-name{
         font-family: 'Bungee Shade', cursive;
+    }
+}
+
+.navbar-simple {
+     background: #fff;
+    .navbar-brand img {
+        width: 30px;
+        height: auto;
     }
 }

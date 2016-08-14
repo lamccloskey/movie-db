@@ -32,13 +32,13 @@
             // auto hide
             notificationsConfigProvider.setAutoHide(true);
             // delay before hide
-            notificationsConfigProvider.setHideDelay(3000);
+            notificationsConfigProvider.setHideDelay(500);
             // support HTML
             notificationsConfigProvider.setAcceptHTML(false);
             // Set an animation for hiding the notification
             notificationsConfigProvider.setAutoHideAnimation('fadeOutNotifications');
             // delay between animation and removing the nofitication
-            notificationsConfigProvider.setAutoHideAnimationDelay(1200);
+            notificationsConfigProvider.setAutoHideAnimationDelay(1000);
         })();
 
     };

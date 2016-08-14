@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document
 public class Movie {
@@ -13,21 +12,22 @@ public class Movie {
 	private String id;
 
 	private String title;
-	
+
 	private String release_date;
-	
+
 	private String vote_average;
-	
+
 	private String overview;
-	
+
 	private String poster;
-	
+
 	private List<String> genres;
 
 	public Movie() {
 	}
 
-	public Movie(String title, String release_date, String vote_average, String overview, String poster, List<String> genres) {
+	public Movie(String title, String release_date, String vote_average, String overview, String poster,
+			List<String> genres) {
 		this.title = title;
 		this.release_date = release_date;
 		this.vote_average = vote_average;
@@ -94,7 +94,7 @@ public class Movie {
 
 	public String toString() {
 		return String.format(
-				"Movie[title='%s', release_date='%s', vote_average='%s', overview='%s', poster='%s', genres='%s']", title,
-				release_date, vote_average, overview, poster, genres);
+				"Movie[title='%s', release_date='%s', vote_average='%s', overview='%s', poster='%s', genres='%s']",
+				title, release_date, vote_average, overview, poster, genres);
 	}
 }
