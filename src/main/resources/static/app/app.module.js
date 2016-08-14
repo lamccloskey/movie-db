@@ -7,7 +7,9 @@
         'ngNotificationsBar',
         'ngSanitize',
         'app.core',
-        'app.home'
+        'app.home',
+        'app.myMovies',
+        'app.services'
     ])
         .config(config);
 

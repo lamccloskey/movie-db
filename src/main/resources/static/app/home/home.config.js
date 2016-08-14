@@ -13,7 +13,14 @@
                 url: '/',
                 templateUrl: 'app/home/home.html',
                 controller: 'HomeController',
-                controllerAs: 'vm'
+                controllerAs: 'vm',
+                resolve: {
+                    genres: ['movieService', function (movieService) {
+                        return movieService.getGenres().then(function (data) {
+                            return data.genres;
+                        });
+                    }]
+                }
             });
     };
 

@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/lamccloskey/movie-db#readme",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "bourbon": "^4.2.7",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0"
   }
 }

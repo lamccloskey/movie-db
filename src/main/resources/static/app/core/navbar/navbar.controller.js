@@ -8,7 +8,7 @@
 
     function NavbarController($scope) {
         var vm = this;
-        vm.title = 'Navbar';
+        vm.brand = 'movie db';
         
     }
 

@@ -1,0 +1,6 @@
+@import "bourbon/bourbon";
+
+header.my-movies{
+    @include background-image(linear-gradient(to bottom right, #46AAE7, #59E189));
+
+}

@@ -20,6 +20,7 @@
     "bootstrap": "^3.3.7",
     "angular-ui-router": "^0.3.1",
     "ng-notifications-bar": "^0.0.16",
-    "angular-sanitize": "^1.5.8"
+    "angular-sanitize": "^1.5.8",
+    "underscore": "^1.8.3"
   }
 }

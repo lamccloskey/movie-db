@@ -1,0 +1,10 @@
+@import "bourbon/bourbon";
+
+header.home{
+    @include background-image(linear-gradient(to bottom right, #E98D1F, #E7E246));
+
+    #the-movie-db-logo{
+        @include size(6em auto);
+    }
+
+}

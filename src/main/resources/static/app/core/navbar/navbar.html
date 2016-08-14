@@ -1,11 +1,15 @@
-<div class="navbar navbar-simple navbar-static-top" role="navigation">
+<div class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="container">
+        <notifications-bar class="notifications"></notifications-bar>
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-                <i class="fa fa-bars" aria-hidden="true"></i>
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" ui-sref="core.home">
-                <p>MovieDB</p>
+                <p id="brand-name">{{vm.brand}}</p>
             </a>
         </div>
 
@@ -19,12 +23,7 @@
             </form>-->
 
             <ul class="nav navbar-nav navbar-right">
-                <li ui-sref-active="active"><a ui-sref="core.home">Home</a></li>
-                <!--<li ui-sref-active="active" ng-if="!vm.user"><a ui-sref="core.org">Organization</a></li>
-                <li ui-sref-active="active" ng-if="!vm.user"><a ui-sref="core.message">Message</a></li>
-                <li ui-sref-active="active" ng-if="!vm.user"><a ui-sref="core.chat">Chat</a></li>
-                <li ui-sref-active="active" ng-if="!vm.user"><a ui-sref="core.signup">Signup</a></li>
-                <li ui-sref-active="active" ng-if="!vm.user"><a ui-sref="core.login">Login</a></li>-->
+                <li ui-sref-active="active"><a ui-sref="core.my-movies"><span class="glyphicon glyphicon-film"></span> My Movies</a></li>
             </ul>
 
         </div>

@@ -1,0 +1,49 @@
+<header class="my-movies">
+    <h1 id="title">{{vm.title}}</h1>
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2">
+            <div class="center-block">
+                <form role="form" name="filterList"">
+                    <div class="input-group">
+                        <input ng-model="vm.movie" type="search" class="form-control" placeholder="search your collection">
+                        <span class="input-group-btn">
+                         <button type="submit" class="btn btn-default">Search</button>
+                    </span>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</header>
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="center-block">
+            <div ng-show="vm.myMovies.length > 0">
+                <ul class="media-list">
+                    <li class="media" ng-repeat="movie in vm.myMovies">
+                        <div class="media-left">
+                            <img class="media-object" ng-src="{{movie.poster}}" alt="'{{movie.title}}'">
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">{{movie.title}}</h4>
+                            <p>Release Date: <span class="label label-success">{{movie.release_date}}</span></p>
+                            <p>Rating: <span class="label label-success">{{movie.vote_average}}</span></p>
+                            <p>Genres: <span ng-repeat="genre in movie.genres"><span class="label label-success">{{genre}}</span> </span></p>
+                            <p>{{movie.overview}}</p>
+                        </div>
+                        <div class="pull-right">
+                            <button class="btn btn-xs btn-danger" ng-click="vm.remove(movie.id)">Remove</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div ng-show="vm.myMovies.length == 0">
+                <p>Add some movies</p>
+            </div>
+        </div>
+    </div>
+</div>
