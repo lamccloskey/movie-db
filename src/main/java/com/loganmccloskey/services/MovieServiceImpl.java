@@ -1,8 +1,9 @@
-package com.loganmccloskey.api;
+package com.loganmccloskey.services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
 import com.loganmccloskey.entities.Movie;
@@ -30,12 +31,7 @@ public class MovieServiceImpl implements MovieService {
 	}
 
 	@Override
-	public Movie create(Movie movie) {
-		return repository.insert(movie);
-	}
-
-	@Override
-	public Movie update(Movie movie) {
+	public Movie create(Movie movie) throws DuplicateKeyException {
 		return repository.save(movie);
 	}
 

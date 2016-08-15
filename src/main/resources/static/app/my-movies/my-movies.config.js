@@ -10,14 +10,14 @@
 
         $stateProvider
             .state('core.my-movies', {
-                url: '/',
+                url: '/my-movies',
                 templateUrl: 'app/my-movies/my-movies.html',
                 controller: 'MyMoviesController',
                 controllerAs: 'vm',
                 resolve: {
                     myMovies: ['movieService', function (movieService) {
-                        return movieService.getAll().then(function (data) {
-                            return data;
+                        return movieService.getAll().then(function (response) {
+                            return response.data;
                         });
                     }]
                 }

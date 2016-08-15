@@ -1,8 +1,9 @@
-package com.loganmccloskey.api;
+package com.loganmccloskey.controllers;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -11,10 +12,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.loganmccloskey.entities.Movie;
+import com.loganmccloskey.services.MovieService;
 
 @RestController
 @RequestMapping("/api/movies")
@@ -50,15 +51,19 @@ public class MovieController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST, produces = "application/json")
-	public ResponseEntity<Movie> postOne(@RequestBody Movie movie) {
-		movie = service.create(movie);
+	public ResponseEntity<?> postOne(@RequestBody Movie movie) {
 		HttpHeaders responseHeaders = new HttpHeaders();
 		responseHeaders.setContentType(MediaType.APPLICATION_JSON);
-	    return new ResponseEntity<Movie>(movie, responseHeaders, HttpStatus.OK);
+		
+		try{
+			movie = service.create(movie);
+			return new ResponseEntity<Movie>(movie, responseHeaders, HttpStatus.CREATED);
+		}catch(DuplicateKeyException ex){
+			ex.printStackTrace();
+			return new ResponseEntity<HttpStatus>(HttpStatus.BAD_REQUEST);
+		}
+		
+		
 	}
 
-	@RequestMapping(method = RequestMethod.PUT, produces = "application/json")
-	public @ResponseBody Movie putOne(@RequestBody Movie movie) {
-		return service.update(movie);
-	}
 }

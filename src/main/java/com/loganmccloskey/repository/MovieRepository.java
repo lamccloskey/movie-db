@@ -6,5 +6,5 @@ import com.loganmccloskey.entities.Movie;
 
 public interface MovieRepository extends MongoRepository<Movie, String> {
 	
-	public Movie findByTitle(String Title);
+	public Movie findByTitle(String title);
 }

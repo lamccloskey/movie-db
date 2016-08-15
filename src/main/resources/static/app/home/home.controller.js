@@ -14,9 +14,9 @@
 
         function search(movie) {
             if (movie) {
-                movieService.search(movie).then(function (data) {
-                    console.log(data);
-                    angular.forEach(data.results, function (result) {
+                movieService.search(movie).then(function (response) {
+                    console.log(response);
+                    angular.forEach(response.data.results, function (result) {
                         
                         result.poster = result.poster_path ? 'http://image.tmdb.org/t/p/w92' + result.poster_path : 'app/images/noposter.png';
                         result.genres = [];
@@ -30,7 +30,7 @@
 
                     });
 
-                    vm.results = data.results;
+                    vm.results = response.data.results;
                 });
             } else {
                 clear();
@@ -43,10 +43,14 @@
         }
 
         function add(movie) {
-            delete movie.id;
-            movieService.add(movie).then(function (data) {
-                console.log(data);
-                notifications.showSuccess(data.title + ' added');
+            movieService.add(movie).then(function (response) {
+                console.log(response);
+                if(response.status === 400){
+                    notifications.showError(movie.title + ' already added');
+                }else{
+                    notifications.showSuccess(response.data.title + ' added');
+                }
+                
             });
         }
     }

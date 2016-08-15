@@ -16,8 +16,8 @@
                 controllerAs: 'vm',
                 resolve: {
                     genres: ['movieService', function (movieService) {
-                        return movieService.getGenres().then(function (data) {
-                            return data.genres;
+                        return movieService.getGenres().then(function (response) {
+                            return response.data.genres;
                         });
                     }]
                 }

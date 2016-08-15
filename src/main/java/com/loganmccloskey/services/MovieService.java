@@ -1,4 +1,4 @@
-package com.loganmccloskey.api;
+package com.loganmccloskey.services;
 
 import java.util.List;
 
@@ -14,5 +14,4 @@ public interface MovieService {
 
 	public Movie create(Movie movie);
 
-	public Movie update(Movie movie);
 }
