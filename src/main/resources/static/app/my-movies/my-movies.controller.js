@@ -12,7 +12,6 @@
         vm.myMovies = myMovies;
         vm.remove = remove;
 
-
         function remove(_id) {
             movieService.remove(_id).then(function (data) {
                 console.log(data);
@@ -23,10 +22,9 @@
                         notifications.showSuccess('Movie removed');
                     }
                 });
-
-                
             });
         }
+
     }
 
 })();
