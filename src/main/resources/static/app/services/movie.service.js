@@ -9,7 +9,6 @@
     function movieService($http, $window) {
 
         const origin = $window.location.origin;
-        console.log($window.location);
         const apiKey = '2070102b343bf69650bde4b0063cd085';
 
         // Implement $Resource for personal db

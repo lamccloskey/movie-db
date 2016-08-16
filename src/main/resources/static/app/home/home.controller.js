@@ -15,7 +15,6 @@
         function search(movie) {
             if (movie) {
                 movieService.search(movie).then(function (response) {
-                    console.log(response);
                     angular.forEach(response.data.results, function (result) {
                         
                         result.poster = result.poster_path ? 'http://image.tmdb.org/t/p/w92' + result.poster_path : 'app/images/noposter.png';
@@ -44,7 +43,6 @@
 
         function add(movie) {
             movieService.add(movie).then(function (response) {
-                console.log(response);
                 if(response.status === 400){
                     notifications.showError(movie.title + ' already added');
                 }else{

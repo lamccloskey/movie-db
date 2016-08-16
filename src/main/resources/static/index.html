@@ -14,12 +14,12 @@
     <title data-ng-bind="title"></title>
 
     <!-- vendor css -->
-    <link rel="stylesheet" type='text/css' href="app/bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="app/bower_components/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type='text/css' href="app/bower_components/ng-notifications-bar/dist/ngNotificationsBar.min.css" />
+    <link rel="stylesheet" type='text/css' href="build/libs/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="build/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type='text/css' href="build/libs/ng-notifications-bar/dist/ngNotificationsBar.min.css" />
 
     <!-- app css -->
-    <link rel="stylesheet" type='text/css' href="app/styles/styles.css">
+    <link rel="stylesheet" type='text/css' href="build/styles.min.css">
 
 </head>
 
@@ -27,43 +27,16 @@
     <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
-    
+
     <div ui-view="navbar"></div>
     <div ui-view="main"></div>
 
-
     <!-- vendor js -->
-    <script type="text/javascript" src="app/bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="app/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="app/bower_components/underscore/underscore-min.js"></script>
-    <script type="text/javascript" src="app/bower_components/angular/angular.min.js"></script>
-    <script type="text/javascript" src="app/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script type="text/javascript" src="app/bower_components/ng-notifications-bar/dist/ngNotificationsBar.min.js"></script>
-    <script type="text/javascript" src="app/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="build/libs/vendor.min.js"></script>
 
-
-    <!-- bootstrapping -->
-    <script type="text/javascript" src="app/app.module.js"></script>
-
-    <!-- core module -->
-    <script type="text/javascript" src="app/core/core.module.js"></script>
-    <script type="text/javascript" src="app/core/core.config.js"></script>
-    <script type="text/javascript" src="app/core/navbar/navbar.controller.js"></script>
-
-    <!-- home module -->
-    <script type="text/javascript" src="app/home/home.module.js"></script>
-    <script type="text/javascript" src="app/home/home.config.js"></script>
-    <script type="text/javascript" src="app/home/home.controller.js"></script>
-
-    <!-- my movies module -->
-    <script type="text/javascript" src="app/my-movies/my-movies.module.js"></script>
-    <script type="text/javascript" src="app/my-movies/my-movies.config.js"></script>
-    <script type="text/javascript" src="app/my-movies/my-movies.controller.js"></script>
-
-    <!-- services module -->
-    <script type="text/javascript" src="app/services/service.module.js"></script>
-    <script type="text/javascript" src="app/services/movie.service.js"></script>
-    <script type="text/javascript" src="app/services/underscore.service.js"></script>
+    <!-- inject:js -->
+    <script src="/build/app.min.js"></script>
+    <!-- endinject -->
 
 </body>
 

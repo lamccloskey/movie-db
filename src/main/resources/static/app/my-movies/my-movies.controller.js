@@ -14,8 +14,6 @@
 
         function remove(_id) {
             movieService.remove(_id).then(function (data) {
-                console.log(data);
-
                 _.each(vm.myMovies, function (movie, index) {
                     if (_.isMatch(movie, { '_id': _id })) {
                         vm.myMovies.splice(index, 1);
