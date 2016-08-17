@@ -25,6 +25,7 @@
     "gulp-concat": "^2.6.0",
     "gulp-filter": "^4.0.0",
     "gulp-inject": "^4.1.0",
+    "gulp-jshint": "^2.0.1",
     "gulp-main-bower-files": "^1.5.2",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
