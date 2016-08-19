@@ -27,24 +27,15 @@ public class MoviedbApplication implements CommandLineRunner {
 		repository.deleteAll();
 
 		// save a couple of movies
-		repository.save(new Movie("3242", "Something About Mary", "1997", "4", "Getting in the heat of ...", "app/images/noposter.png",
-				new ArrayList<String>(Arrays.asList("Comedy"))));
-		repository.save(new Movie("9043", "Heat", "2000", "7.4", "One night long ago ...", "app/images/noposter.png",
-				new ArrayList<String>(Arrays.asList("Action", "Thriller"))));
-
-		// fetch all movies
-		System.out.println("Movies found with findAll():");
-		System.out.println("-------------------------------");
-		for (Movie movie : repository.findAll()) {
-			System.out.println(movie);
-		}
-		System.out.println();
+		repository.save(new Movie("120", "The Lord of the Rings: The Fellowship of the Ring", "2001-12-18", "7.77",
+				"Young hobbit Frodo Baggins, after inheriting a mysterious ring from his uncle Bilbo, must leave his home in order to keep it from falling into the hands of its evil creator. Along the way, a fellowship is formed to protect the ringbearer and make sure that the ring arrives at its final destination: Mt. Doom, the only place where it can be destroyed.",
+				"http://image.tmdb.org/t/p/w92/bxVxZb5O9OxCO0oRUNdCnpy9NST.jpg", new ArrayList<String>(Arrays.asList("Adventure", "Fantasy", "Action"))));
 
 		// fetch an individual movie
-		System.out.println("Movie found with findById('9043'):");
+		System.out.println("Movie found with findByTitle('The Lord of the Rings: The Fellowship of the Ring'):");
 		System.out.println("--------------------------------");
-		System.out.println(repository.findByTitle("Heat"));
-		
+		System.out.println(repository.findByTitle("The Lord of the Rings: The Fellowship of the Ring"));
+
 	}
 
 }
