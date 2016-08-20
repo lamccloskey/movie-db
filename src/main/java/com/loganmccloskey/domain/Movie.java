@@ -1,4 +1,4 @@
-package com.loganmccloskey.entities;
+package com.loganmccloskey.domain;
 
 import java.util.List;
 

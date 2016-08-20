@@ -2,7 +2,7 @@ package com.loganmccloskey.services;
 
 import java.util.List;
 
-import com.loganmccloskey.entities.Movie;
+import com.loganmccloskey.domain.Movie;
 
 public interface MovieService {
 

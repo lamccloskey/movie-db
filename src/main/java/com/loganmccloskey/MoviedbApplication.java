@@ -3,19 +3,28 @@ package com.loganmccloskey;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.loganmccloskey.entities.Movie;
-import com.loganmccloskey.repository.MovieRepository;
+import com.loganmccloskey.domain.Movie;
+import com.loganmccloskey.repositories.MovieRepository;
 
 @SpringBootApplication
 public class MoviedbApplication implements CommandLineRunner {
 
+	static final Logger logger = LoggerFactory.getLogger(MoviedbApplication.class);
+	
+	private final MovieRepository repository;
+
 	@Autowired
-	private MovieRepository repository;
+	public MoviedbApplication(MovieRepository repository) {
+		this.repository = repository;
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(MoviedbApplication.class, args);

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.loganmccloskey.entities.Movie;
+import com.loganmccloskey.domain.Movie;
 import com.loganmccloskey.services.MovieService;
 
 @RestController

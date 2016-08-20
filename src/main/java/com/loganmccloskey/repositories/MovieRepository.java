@@ -1,8 +1,8 @@
-package com.loganmccloskey.repository;
+package com.loganmccloskey.repositories;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.loganmccloskey.entities.Movie;
+import com.loganmccloskey.domain.Movie;
 
 public interface MovieRepository extends MongoRepository<Movie, String> {
 	
