@@ -8,11 +8,9 @@
 
     function movieService($http, __env) {
 
-        //const origin = $window.location.origin;
-        //const apiKey = '2070102b343bf69650bde4b0063cd085';
-        const tmdbBaseUrl = 'http://api.themoviedb.org/3';
         const origin = __env.siteUrl;
-        const apiKey = __env.apiKey;
+        const tmdbBaseUrl = __env.apiUrl;
+        const tmdbApiKey = __env.apiKey;
 
         // Implement $Resource for personal db
         var movieService = {
@@ -27,7 +25,7 @@
         function search(movie) {
             return $http({
                 method: 'GET',
-                url: tmdbBaseUrl + '/search/movie?query=' + movie + '&api_key=' + apiKey
+                url: tmdbBaseUrl + '/search/movie?query=' + movie + '&api_key=' + tmdbApiKey
             }).then(function success(response) {
                 return response;
             }, function error(err) {
@@ -38,7 +36,7 @@
         function getGenres() {
             return $http({
                 method: 'GET',
-                url: tmdbBaseUrl + '/genre/movie/list' + '?api_key=' + apiKey
+                url: tmdbBaseUrl + '/genre/movie/list' + '?api_key=' + tmdbApiKey
             }).then(function success(response) {
                 return response;
             }, function error(err) {
