@@ -4,12 +4,15 @@
 
     angular.module('app.services').factory('movieService', movieService);
 
-    movieService.$inject = ['$http', '$window'];
+    movieService.$inject = ['$http', '__env'];
 
-    function movieService($http, $window) {
+    function movieService($http, __env) {
 
-        const origin = $window.location.origin;
-        const apiKey = '2070102b343bf69650bde4b0063cd085';
+        //const origin = $window.location.origin;
+        //const apiKey = '2070102b343bf69650bde4b0063cd085';
+        const tmdbBaseUrl = 'http://api.themoviedb.org/3';
+        const origin = __env.siteUrl;
+        const apiKey = __env.apiKey;
 
         // Implement $Resource for personal db
         var movieService = {
@@ -24,7 +27,7 @@
         function search(movie) {
             return $http({
                 method: 'GET',
-                url: 'http://api.themoviedb.org/3/search/movie?query=' + movie + '&api_key=' + apiKey
+                url: tmdbBaseUrl + '/search/movie?query=' + movie + '&api_key=' + apiKey
             }).then(function success(response) {
                 return response;
             }, function error(err) {
@@ -35,7 +38,7 @@
         function getGenres() {
             return $http({
                 method: 'GET',
-                url: 'http://api.themoviedb.org/3/genre/movie/list' + '?api_key=' + apiKey
+                url: tmdbBaseUrl + '/genre/movie/list' + '?api_key=' + apiKey
             }).then(function success(response) {
                 return response;
             }, function error(err) {

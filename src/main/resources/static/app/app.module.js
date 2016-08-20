@@ -2,6 +2,12 @@
 
     'use-strict';
 
+    var __env = {};
+
+    if (window) {
+        Object.assign(__env, window.__env);
+    }
+
     angular.module('app', [
         'ui.router',
         'ngNotificationsBar',
@@ -11,12 +17,14 @@
         'app.myMovies',
         'app.services'
     ])
-        .config(config);
+        .config(config)
+        .constant('__env', __env);
 
-    config.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider', 'notificationsConfigProvider'];
+    config.$inject = ['$stateProvider', '$locationProvider', '$urlRouterProvider', 'notificationsConfigProvider', '$logProvider'];
 
-    function config($stateProvider, $locationProvider, $urlRouterProvider, notificationsConfigProvider) {
+    function config($stateProvider, $locationProvider, $urlRouterProvider, notificationsConfigProvider, $logProvider) {
 
+        $logProvider.debugEnabled(__env.enableDebug);
         $locationProvider.html5Mode(true);
         $urlRouterProvider.otherwise('/404');
         $urlRouterProvider.when('/index.html', '/');
