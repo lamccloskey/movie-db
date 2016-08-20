@@ -1,6 +1,5 @@
 package com.loganmccloskey;
 
-import org.apache.log4j.spi.LoggerFactory;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
