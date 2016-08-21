@@ -26,7 +26,7 @@ gulp.task('watch', function () {
 // removes all compiled dev files
 gulp.task('clean-build', function () {
     var deferred = Q.defer();
-    del('./static/build/', function () {
+    del('src/main/resources/static/build/', function () {
         deferred.resolve();
     });
     return deferred.promise;
