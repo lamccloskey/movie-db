@@ -5,7 +5,8 @@
     var __env = {};
 
     if (window) {
-        Object.assign(__env, window.__env);
+        //Object.assign(__env, window.__env);
+        __env = JSON.parse(JSON.stringify(window.__env));
     }
 
     angular.module('app', [
