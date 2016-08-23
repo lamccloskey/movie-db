@@ -38,7 +38,7 @@ gulp.task('build-css', function () {
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(sourcemaps.init())
-        .pipe(cleanCSS())
+        .pipe(cleanCSS({ processImport: false }))
         .pipe(sourcemaps.write())
         .pipe(rename({
             suffix: '.min'
