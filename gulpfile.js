@@ -66,7 +66,7 @@ gulp.task('build-js', function (cb) {
 
 gulp.task('angular-app-files', function () {
     return gulp.src(['src/main/resources/static/app/**/*', '!src/main/resources/static/app/**/*.js', '!src/main/resources/static/app/sass/**/*'])
-    .pipe(gulp.dest('src/main/resources/static/build'))
+        .pipe(gulp.dest('src/main/resources/static/build'))
 });
 
 // concat, uglify, and move main bower files to build
@@ -103,7 +103,7 @@ gulp.task('main-bower-files', function () {
 gulp.task('inject-js', ['build-js'], function () {
     gulp.src('src/main/resources/static/index.html')
         .pipe(inject(
-            gulp.src('src/main/resources/static/build/app.min.js', { read: false }), {ignorePath: 'src/main/resources/static'}
+            gulp.src('src/main/resources/static/build/app.min.js', { read: false }), { ignorePath: 'src/main/resources/static' }
         ))
         .pipe(gulp.dest('src/main/resources/static'));
 });
