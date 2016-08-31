@@ -9,9 +9,9 @@ Install/Build Instruction
 ========
 
 ##Prerequisites##
-You must have Node.js installed
-You must have gulp globally installed
-You must have bower globally installed
+* You must have Node.js installed
+* You must have gulp globally installed
+* You must have bower globally installed
 
 ##Package and run project##
 1. mvn clean install
