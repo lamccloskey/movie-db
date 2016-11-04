@@ -16,3 +16,7 @@ Install/Build Instruction
 ##Package and run project##
 1. mvn clean install
 2. java -jar target/moviedb-0.0.1-SNAPSHOT.jar
+
+
+##Hosted on Heroku
+https://a-movie-db.herokuapp.com/
