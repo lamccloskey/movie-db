@@ -2,7 +2,6 @@
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
 var cleanCSS = require('gulp-clean-css');
 var mainBowerFiles = require('gulp-main-bower-files');
 var angularFilesort = require('gulp-angular-filesort');
@@ -35,11 +34,8 @@ gulp.task('clean-build', function () {
 // compile scss into css and move to build
 gulp.task('build-css', function () {
     return gulp.src('src/main/resources/static/app/sass/**/*.scss')
-        .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
-        .pipe(sourcemaps.init())
         .pipe(cleanCSS())
-        .pipe(sourcemaps.write())
         .pipe(rename({
             suffix: '.min'
         }))
@@ -50,10 +46,8 @@ gulp.task('build-js', function (cb) {
     pump([
         gulp.src('src/main/resources/static/**/*.js')
         , angularFilesort()
-        , sourcemaps.init()
         , uglify()
         , concat('app.js')
-        , sourcemaps.write()
         , rename({
             suffix: '.min'
         })
