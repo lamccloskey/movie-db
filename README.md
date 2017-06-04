@@ -20,3 +20,6 @@ Install/Build Instruction
 
 ##Hosted on Heroku
 https://a-movie-db.herokuapp.com/
+
+
+_This product uses the TMDb API but is not endorsed or certified by TMDb._
