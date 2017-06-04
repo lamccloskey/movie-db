@@ -25,7 +25,7 @@
                         angular.forEach(result.genre_ids, function (genre_id) {
                             _.each(genres, function (genre, index) {
                                 if (_.isMatch(genre, { 'id': genre_id })) {
-                                    result.genres.push(genre.name);
+                                    result.genres.push(genre.name); //intersectionBy
                                 }
                             });
                         });

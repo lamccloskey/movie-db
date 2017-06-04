@@ -62,8 +62,7 @@ public class MovieController {
 			ex.printStackTrace();
 			return new ResponseEntity<HttpStatus>(HttpStatus.BAD_REQUEST);
 		}
-		
-		
+	
 	}
 
 }

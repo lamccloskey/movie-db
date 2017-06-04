@@ -35,7 +35,7 @@ public class MoviedbApplication implements CommandLineRunner {
 
 		repository.deleteAll();
 
-		// save a couple of movies
+		// save a couple of movies 
 		repository.save(new Movie("120", "The Lord of the Rings: The Fellowship of the Ring", "2001-12-18", "7.77",
 				"Young hobbit Frodo Baggins, after inheriting a mysterious ring from his uncle Bilbo, must leave his home in order to keep it from falling into the hands of its evil creator. Along the way, a fellowship is formed to protect the ringbearer and make sure that the ring arrives at its final destination: Mt. Doom, the only place where it can be destroyed.",
 				"https://image.tmdb.org/t/p/w92/bxVxZb5O9OxCO0oRUNdCnpy9NST.jpg", new ArrayList<String>(Arrays.asList("Adventure", "Fantasy", "Action"))));
