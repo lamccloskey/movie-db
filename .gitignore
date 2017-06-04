@@ -1,4 +1,15 @@
+.classpath
+.mvn
+.project
+.settings
+.springBeans
+.vscode
+mvnw
+mvnw.cmd
 target
+build
+node
 node_modules
 bower_components
-build
+Dockerfile
+start.sh
